@@ -10,10 +10,10 @@ def home(request):
         "template_title":title,
         "form": form
     }
-    email = SignUp.objects.all()
-    print(type(email))
-
-    for i in email:
+    password = SignUp.objects.all()
+    # print(type(email))
+    #
+    for i in password:
         print(i)
 
     #full_name = request.POST.getlist('full_name')
@@ -25,7 +25,6 @@ def home(request):
         # form.save()
         instance = form.save(commit = False)
         instance.save()
-        print(instance)
         context["template_title"] = "WELCOME" + "  " + instance.full_name
 
     return render(request,"home.html",context)

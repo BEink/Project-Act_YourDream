@@ -21,3 +21,8 @@ class SignUpForm(forms.ModelForm):
         print("forms.py --> clean_full_name")
         full_name = self.cleaned_data.get("full_name")
         return full_name
+    def clean_password(self):
+        print("forms.py --> clean_password")
+        for i in SignUp.objects.all():
+            print(i)
+
