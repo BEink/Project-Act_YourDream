@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^home/','newsletter.views.home',name='home'),
     url(r'^login/','loginProcess.views.home',name='home'),
-    url(r'^david/(?P<username>\w{0,50})/$',include('polls.urls')),
+    url(r'^david/$',include('polls.urls')),
+    url(r'^blog/',include('blog.urls')),
 
 ]
